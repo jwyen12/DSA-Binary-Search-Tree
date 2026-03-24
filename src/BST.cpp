@@ -4,6 +4,7 @@ BST::BST(){
     root = nullptr;
 }
 
+
 bool BST::insert(int val, TreeNode *&node){
     if(node == nullptr){
         node = new TreeNode(val);
@@ -83,6 +84,7 @@ int BST::height(TreeNode *node){
 int BST::height(){
     return height(root);
 }
+
 
 bool BST::remove(int val, TreeNode *&node){
     if(node == nullptr){
