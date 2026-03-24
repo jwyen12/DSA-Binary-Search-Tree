@@ -1,5 +1,8 @@
 #include "../include/BST.h"
 
+BST::BST(){
+    root = nullptr;
+}
 
 bool BST::insert(int val, TreeNode *&node){
     if(node == nullptr){
@@ -11,7 +14,7 @@ bool BST::insert(int val, TreeNode *&node){
         return insert(val, node->left);
     }
     else if(node->val < val){
-        return insert(node->val, node->right);
+        return insert(val, node->right);
     }
     else{
         return false;
