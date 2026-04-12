@@ -16,6 +16,9 @@ class BST {
         int count(TreeNode *node);
         int height(TreeNode *node);
         bool remove(int value, TreeNode *&node);
+        void in_order_traversal(TreeNode *node);
+        void pre_order_traversal(TreeNode *node);
+        void post_order_traversal(TreeNode *node);
         
     
     public:
@@ -25,6 +28,10 @@ class BST {
         int count();
         int height();
         bool remove(int val);
+        void in_order_traversal();
+        void pre_order_traversal();
+        void post_order_traversal();
+        void level_order_traversal();
 
 };
 #endif

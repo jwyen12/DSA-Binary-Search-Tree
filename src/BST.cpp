@@ -1,4 +1,5 @@
 #include "../include/BST.h"
+#include <iostream>
 
 BST::BST(){
     root = nullptr;
@@ -129,4 +130,52 @@ bool BST::remove(int val, TreeNode *&node){
 
 bool BST::remove(int val){
     return remove(val,root);
+}
+
+
+void BST::in_order_traversal(TreeNode *node){
+    if(node == nullptr) return;
+
+    in_order_traversal(node->left);
+    std::cout << node->val << " ";
+    in_order_traversal(node->right);
+
+}
+
+
+void BST::in_order_traversal(){
+    in_order_traversal(root);
+    std::cout << std::endl;
+}
+
+
+void BST::pre_order_traversal(TreeNode *node){
+    if(node == nullptr) return;
+
+    std::cout << node->val << " ";
+    pre_order_traversal(node->left);
+    pre_order_traversal(node->right);
+
+}
+
+
+void BST::pre_order_traversal(){
+    pre_order_traversal(root);
+    std::cout << std::endl;
+}
+
+
+void BST::post_order_traversal(TreeNode *node){
+    if(node == nullptr) return;
+    
+    post_order_traversal(node->left);
+    post_order_traversal(node->right);
+    std::cout << node->val << " ";
+
+}
+
+
+void BST::post_order_traversal(){
+    post_order_traversal(root);
+    std::cout << std::endl;
 }
