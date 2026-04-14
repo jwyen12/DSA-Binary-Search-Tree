@@ -179,3 +179,21 @@ void BST::post_order_traversal(){
     post_order_traversal(root);
     std::cout << std::endl;
 }
+
+
+void BST:: level_order_traversal(){
+    TreeNode *current = root;
+    if(current == nullptr) return;
+
+    Queue<TreeNode*> queue;
+    queue.enqueue(current);
+
+    while(!queue.isEmpty()){
+        TreeNode *node = queue.front();
+        queue.dequeue();
+        std::cout << node->val << " ";
+
+        if(node->left != nullptr) queue.enqueue(node->left);
+        if(node->right != nullptr) queue.enqueue(node->right);
+    }
+}
